@@ -14,7 +14,7 @@
 				<configuration>
 					<source />
 					<target />
-					
+
 				</configuration>
 			</plugin>
 			<plugin>
@@ -52,6 +52,12 @@
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-chrome-driver</artifactId>
+			<version>3.8.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-firefox-driver -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-firefox-driver</artifactId>
 			<version>3.8.1</version>
 		</dependency>
 

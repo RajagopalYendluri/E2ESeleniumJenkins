@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,8 +20,8 @@ public class TC_002 {
 	@Test
 	public void testcase1() throws InterruptedException
 	{
-		System.setProperty("webdriver.chrome.driver", "/usr/bin/chrome/");
-		ChromeDriver driver  = new ChromeDriver();
+		System.setProperty("webdriver.firefox.driver", "/usr/bin/firefox/");
+		FirefoxDriver driver  = new FirefoxDriver();
 		driver.get("https://www.fadvassessments.com/onlinetesting/gamma.html");
 		driver.findElementByName("ID").sendKeys("qatest");
 		driver.findElementByName("username").sendKeys("administrator");

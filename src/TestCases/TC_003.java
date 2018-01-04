@@ -16,8 +16,8 @@ public class TC_003 {
 	public void testcase1() throws InterruptedException
 	{
 
-		System.setProperty("webdriver.firefox.driver", "/usr/bin/firefox/");
-		FirefoxDriver driver  = new FirefoxDriver();
+		System.setProperty("webdriver.firefox.driver", "/usr/bin/chrome");
+		ChromeDriver driver  = new ChromeDriver();
 		driver.get("https://www.fadvassessments.com/onlinetesting/gamma.html");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver,60);

@@ -20,7 +20,7 @@ public class TC_002 {
 	@Test
 	public void testcase1() throws InterruptedException
 	{
-		System.setProperty("webdriver.chrome.driver", "/");
+		System.setProperty("webdriver.chrome.driver", "");
 		ChromeDriver driver  = new ChromeDriver();
 		driver.get("https://www.fadvassessments.com/onlinetesting/gamma.html");
 		driver.findElementByName("ID").sendKeys("qatest");

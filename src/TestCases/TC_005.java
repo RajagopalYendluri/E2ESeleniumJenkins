@@ -19,7 +19,7 @@ public class TC_005 {
 	public void testcase1() throws InterruptedException
 	{
 
-		System.setProperty("webdriver.chrome.driver", "/");
+		System.setProperty("webdriver.chrome.driver", "");
 //		FirefoxDriver driver  = new FirefoxDriver();
 		ChromeDriver driver  = new ChromeDriver();
 

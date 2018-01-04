@@ -20,7 +20,8 @@ public class TC_001 {
 	{
 
 		System.out.println("\n\n\n\n >>> User Directory " + System.getProperty("user.dir")  +"\n\n\n\n ");
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/Driver/chromedriver/chromedriver");
+		
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/ws/Driver/chromedriver/chromedriver.exe");
 		//FirefoxDriver driver  = new FirefoxDriver();
 		ChromeDriver driver  = new ChromeDriver();
 		driver.get("https://www.fadvassessments.com/onlinetesting/gamma.html");

@@ -19,10 +19,11 @@ public class TC_001 {
 	public void testcase1() throws InterruptedException
 	{
 
-		System.out.println("\n\n\n\n >>> User Directory " + System.getProperty("user.dir")  +"\n\n\n\n ");
+		//System.out.println("\n\n\n\n >>> User Directory " + System.getProperty("user.dir")  +"\n\n\n\n ");
 		
-		System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/OTAutomation/ws/Driver/chromedriver/chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/OTAutomation/ws/Driver/chromedriver/chromedriver.exe");
 		//FirefoxDriver driver  = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/Driver/chromedriver/chromedriver");
 		ChromeDriver driver  = new ChromeDriver();
 		driver.get("https://www.fadvassessments.com/onlinetesting/gamma.html");
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);

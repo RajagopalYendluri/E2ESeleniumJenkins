@@ -20,7 +20,7 @@ public class TC_002 {
 	@Test
 	public void testcase1() throws InterruptedException
 	{
-		System.out.println("\n\n\n\n >>> User Directory " + System.getProperty("user.dir")  +"\n\n\n\n ");
+		System.out.println("\n\n\n\n >>>>updated >> User Directory " + System.getProperty("user.dir")  +"\n\n\n\n ");
 		
 		System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/OTAutomation/ws/Driver/chromedriver/chromedriver.exe");
 		ChromeDriver driver  = new ChromeDriver();

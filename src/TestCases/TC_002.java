@@ -23,7 +23,8 @@ public class TC_002 {
 		//System.out.println("\n\n\n\n >>>>updated >> User Directory " + System.getProperty("user.dir")  +"\n\n\n\n ");
 		
 		//System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/OTAutomation/ws/Driver/chromedriver/chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/Driver/chromedriver/chromedriver");
+		//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/Driver/chromedriver/chromedriver");
+		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver/chromedriver");
 		ChromeDriver driver  = new ChromeDriver();
 		driver.get("https://www.fadvassessments.com/onlinetesting/gamma.html");
 		driver.findElementByName("ID").sendKeys("qatest");

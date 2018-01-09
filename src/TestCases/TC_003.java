@@ -15,7 +15,7 @@ public class TC_003 {
 	@Test
 	public void testcase1() throws InterruptedException
 	{
-
+//Updated.
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/ws/Driver/chromedriver/chromedriver");
 		ChromeDriver driver  = new ChromeDriver();
 		driver.get("https://www.fadvassessments.com/onlinetesting/gamma.html");

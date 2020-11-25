@@ -11,7 +11,14 @@ import org.testng.annotations.Test;
 //Accounting - Financial Statements - - Regression Automation Scripts
 //"EN_ACCIN","Accounting - Financial Statements
 
+
 public class TC_004 { 
+	
+	private static final String  ACCOUNTID= "accountid";
+	private static final String USERNAME = "username";
+	private static final String PASSWORD = "password";
+	private static final String SKILLCHECKURL = "skillcheckurl";
+	
 	@Test
 	public void testcase1() throws InterruptedException
 	{
@@ -19,12 +26,12 @@ public class TC_004 {
 		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/ws/Driver/chromedriver/chromedriver");
 //		FirefoxDriver driver  = new FirefoxDriver();
 		ChromeDriver driver  = new ChromeDriver();
-		driver.get("https://www.fadvassessments.com/onlinetesting/gamma.html");
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		WebDriverWait wait = new WebDriverWait(driver,40);
-		driver.findElementByName("ID").sendKeys("qatest");
-		driver.findElementByName("username").sendKeys("administrator");
-		driver.findElementByName("password").sendKeys("Sk1llCheck!");
+		driver.get(AppConfig.getProperty(SKILLCHECKURL));
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		driver.findElementByName("ID").sendKeys(AppConfig.getProperty(ACCOUNTID));
+		driver.findElementByName("username").sendKeys(AppConfig.getProperty(USERNAME));
+		driver.findElementByName("password").sendKeys(AppConfig.getProperty(PASSWORD));
 		driver.findElementByName("login").click();
 		driver.findElement(By.linkText("Administer Testing")).click();
 		driver.findElement(By.linkText("Administer Tests")).click();

@@ -15,10 +15,14 @@ import org.testng.annotations.Test;
 //"EN_P5F_ST_F","PowerPoint 2013 - Standard
 
 public class TC_001 { 
+	private static final String  ACCOUNTID= "accountid";
+	private static final String USERNAME = "username";
+	private static final String PASSWORD = "password";
+	private static final String SKILLCHECKURL = "skillcheckurl";
+
 	@Test
 	public void testcase1() throws InterruptedException
 	{
-
 		//System.out.println("\n\n\n\n >>> User Directory " + System.getProperty("user.dir")  +"\n\n\n\n ");
 		
 		//System.setProperty("webdriver.chrome.driver", "/var/lib/jenkins/workspace/OTAutomation/ws/Driver/chromedriver/chromedriver.exe");
@@ -26,12 +30,12 @@ public class TC_001 {
 		//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/Driver/chromedriver/chromedriver");
 		System.setProperty("webdriver.chrome.driver", "chromedriver");
 		ChromeDriver driver  = new ChromeDriver();
-		driver.get("https://www.fadvassessments.com/onlinetesting/gamma.html");
+		driver.get(AppConfig.getProperty(SKILLCHECKURL));
 		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		WebDriverWait wait = new WebDriverWait(driver, 60);
-		driver.findElementByName("ID").sendKeys("qatest");
-		driver.findElementByName("username").sendKeys("administrator");
-		driver.findElementByName("password").sendKeys("Sk1llCheck!");
+		driver.findElementByName("ID").sendKeys(AppConfig.getProperty(ACCOUNTID));
+		driver.findElementByName("username").sendKeys(AppConfig.getProperty(USERNAME));
+		driver.findElementByName("password").sendKeys(AppConfig.getProperty(PASSWORD));
 		driver.findElementByName("login").click();
 		driver.findElement(By.linkText("Administer Testing")).click();
 		driver.findElement(By.linkText("Administer Tests")).click();

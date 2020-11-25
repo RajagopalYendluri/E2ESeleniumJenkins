@@ -17,6 +17,11 @@ import org.testng.annotations.Test;
 
 public class TC_002 { 
 
+	private static final String  ACCOUNTID= "accountid";
+	private static final String USERNAME = "username";
+	private static final String PASSWORD = "password";
+	private static final String SKILLCHECKURL = "skillcheckurl";
+	
 	@Test
 	public void testcase1() throws InterruptedException
 	{
@@ -26,10 +31,12 @@ public class TC_002 {
 		//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/Driver/chromedriver/chromedriver");
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver/chromedriver");
 		ChromeDriver driver  = new ChromeDriver();
-		driver.get("https://www.fadvassessments.com/onlinetesting/gamma.html");
-		driver.findElementByName("ID").sendKeys("qatest");
-		driver.findElementByName("username").sendKeys("administrator");
-		driver.findElementByName("password").sendKeys("Sk1llCheck!");
+		driver.get(AppConfig.getProperty(SKILLCHECKURL));
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		WebDriverWait wait = new WebDriverWait(driver, 60);
+		driver.findElementByName("ID").sendKeys(AppConfig.getProperty(ACCOUNTID));
+		driver.findElementByName("username").sendKeys(AppConfig.getProperty(USERNAME));
+		driver.findElementByName("password").sendKeys(AppConfig.getProperty(PASSWORD));
 		driver.findElementByName("login").click();
 		driver.findElement(By.linkText("Administer Testing")).click();
 		driver.findElement(By.linkText("Administer Tests")).click();
@@ -48,7 +55,7 @@ public class TC_002 {
 		driver.findElement(By.xpath("//button[@id='btnCompleteReg']")).click();
 		driver.findElement(By.xpath("//button[@id='btnBeginTest']")).click();
 	    Thread.sleep(3000);
-		WebDriverWait wait = new WebDriverWait(driver,40);
+	    wait = new WebDriverWait(driver,40);
 	    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(".//*[@id='itemWrapper']/div[2]//button")));   
 	    WebElement el = driver.findElement(By.xpath(".//*[@id='itemWrapper']/div[2]//button"));
 	    Actions act=new Actions(driver);

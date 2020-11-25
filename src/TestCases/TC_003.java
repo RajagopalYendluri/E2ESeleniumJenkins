@@ -8,6 +8,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import com.skillcheck.regression.util.Encryption;
+
 //Allegis - Recruitment Coordinator - RC  - Regression Automation Scripts 
 //Client-required test1:"ENTAARC","Allegis - Recruitment Coordinator - RC
 
@@ -29,8 +31,7 @@ public class TC_003 {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		driver.findElementByName("ID").sendKeys(AppConfig.getProperty(ACCOUNTID));
 		driver.findElementByName("username").sendKeys(AppConfig.getProperty(USERNAME));
-		driver.findElementByName("password").sendKeys(AppConfig.getProperty(PASSWORD));
-		driver.findElementByName("login").click();
+		driver.findElementByName("password").sendKeys(Encryption.decryptPassword(AppConfig.getProperty(PASSWORD)));		driver.findElementByName("login").click();
 		driver.findElement(By.linkText("Administer Testing")).click();
 		driver.findElement(By.linkText("Administer Tests")).click();
 		driver.findElement(By.xpath("//select[@id='all_tests']/option[@value='ENTAARC']")).click();

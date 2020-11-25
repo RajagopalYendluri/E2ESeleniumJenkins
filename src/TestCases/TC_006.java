@@ -20,6 +20,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import com.gargoylesoftware.htmlunit.javascript.host.Console;
+import com.skillcheck.regression.util.Encryption;
 
 //Typing Test -  Regression Automation Scripts 
 //"Flash-based typing engine: "EN_TYPSS","Typing Test
@@ -44,8 +45,7 @@ public class TC_006 {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		driver.findElementByName("ID").sendKeys(AppConfig.getProperty(ACCOUNTID));
 		driver.findElementByName("username").sendKeys(AppConfig.getProperty(USERNAME));
-		driver.findElementByName("password").sendKeys(AppConfig.getProperty(PASSWORD));
-		driver.findElementByName("login").click();
+		driver.findElementByName("password").sendKeys(Encryption.decryptPassword(AppConfig.getProperty(PASSWORD)));		driver.findElementByName("login").click();
 		driver.findElement(By.linkText("Administer Testing")).click();
 		driver.findElement(By.linkText("Administer Tests")).click();
 		driver.findElement(By.xpath("//select[@id='all_tests']/option[@value='EN_TYPSS']")).click();

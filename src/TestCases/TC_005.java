@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import com.skillcheck.regression.util.Encryption;
+
 //Talent Acquisition - Guest Service Profile- Regression Automation Scripts 
 //"ENTAGSP","Talent Acquisition - Guest Service Profile"
 
@@ -33,8 +35,7 @@ public class TC_005 {
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		driver.findElementByName("ID").sendKeys(AppConfig.getProperty(ACCOUNTID));
 		driver.findElementByName("username").sendKeys(AppConfig.getProperty(USERNAME));
-		driver.findElementByName("password").sendKeys(AppConfig.getProperty(PASSWORD));
-		driver.findElementByName("login").click();
+		driver.findElementByName("password").sendKeys(Encryption.decryptPassword(AppConfig.getProperty(PASSWORD)));		driver.findElementByName("login").click();
 		driver.findElement(By.linkText("Administer Testing")).click();
 		driver.findElement(By.linkText("Administer Tests")).click();
 		driver.findElement(By.xpath("//select[@id='all_tests']/option[@value='ENTAGSP']")).click();
